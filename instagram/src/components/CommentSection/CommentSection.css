@@ -1,0 +1,30 @@
+@import "https://use.fontawesome.com/releases/v5.7.2/css/all.css";
+
+.comment-section {
+    height: 250px;
+    Margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 12px;
+    text-align: left;
+    font-size: 16px;
+   
+}
+
+.comment-input {
+    width: 570px;
+    height: 60px;
+    margin-top: 50px;
+    font-size: 16px;  
+}
+
+.heart-comment {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    font-size: 22px;
+    margin-top: 0;
+}
+
+.commentImg {
+    margin-left: 20px;
+}

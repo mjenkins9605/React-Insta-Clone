@@ -1,5 +1,6 @@
 import React from "react";
 
+import "./PostContainer.css";
 import PropTypes from 'prop-types';
 import PostHeader from "./PostHeader";
 import CommentSectionContainer from "../CommentSection/CommentSectionContainer";

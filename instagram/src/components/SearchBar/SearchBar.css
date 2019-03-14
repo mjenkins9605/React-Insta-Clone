@@ -9,26 +9,32 @@
 
 .leftIcons {
     display: flex;
-    flex-direction: row;
-    
+    flex-direction: row;  
 }
 
 input {
-    width: 200px;
-    height: 40px;
+    width: 250px;
+    height: 30px;
+    font-size: 16px; 
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 5px;
 }
 
 .rightIcons {
     display: flex;
     flex-direction: row;
-    
+    font-size: 30px;
+    margin-top: 20px;
 }
 
 .rightIcons > p {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .banner {
-    width: 8%;
-    height: 8%;
+    width: 10%;
+    height: 10%;
+    margin-top: 50px;
+    padding-right: 30px;
 }

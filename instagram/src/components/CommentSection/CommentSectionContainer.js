@@ -13,7 +13,12 @@ class CommentSectionContainer extends React.Component {
     }
     render() {
       return (
-        <div>
+        <div className="comment-section">
+            <div className="heart-comment">
+                <p className="heart"><i class="far fa-heart"></i></p>
+                <p className="commentImg"><i class="far fa-comment"></i></p>
+            </div>
+            <p>373 likes</p>
           {this.state.comments.map((comment, input) => <Comment key={input} comment={comment} />)}
           <CommentInput />
         </div>

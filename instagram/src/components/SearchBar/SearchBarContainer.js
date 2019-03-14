@@ -1,13 +1,13 @@
 import React from "react";
 
-import SearchBar from "./SearchBar.css";
+import "./SearchBar.css";
 import instagramBanner from "./instagramBanner.jpg";
 
 function SearchBarContainer (props) {
     return (
         <div className="searchBar">
             <div className="leftIcons">
-                <p><i class="fab fa-instagram"></i></p>
+                <p className="camera"><i class="fab fa-instagram"></i></p>
                 <p>|</p>
             </div>
 

@@ -1,6 +1,7 @@
 import React from "react";
 
 import Post from "./Posts";
+import "./PostContainer.css";
 
 function PostsContainer (props) {
     return (

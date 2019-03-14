@@ -1,5 +1,6 @@
 import React from 'react';
-// import './Posts.css';
+
+import "./PostContainer.css";
 
 function PostHeader (props) {
   return (
@@ -11,7 +12,7 @@ function PostHeader (props) {
           src={props.thumbnailUrl}
         />
       </div>
-      <div>{props.username}</div>
+      <div className="post-username">{props.username}</div>
     </div>
   );
 };
