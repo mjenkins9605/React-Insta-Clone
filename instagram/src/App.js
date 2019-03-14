@@ -3,6 +3,7 @@ import "./App.css";
 
 import dummyData from "./dummy-data";
 import SearchBarContainer from "./components/SearchBar/SearchBarContainer";
+import PostContainer from "./components/PostContainer/PostContainer";
 
 class App extends Component {
   constructor() {
@@ -16,7 +17,7 @@ class App extends Component {
     return (
       <div className="App">
       <SearchBarContainer />
-        <p>Learn React</p>
+        <PostContainer posts={this.state.posts} />
       </div>
     );
   }

@@ -4,6 +4,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    font-size: 40px;
+}
+
+.leftIcons {
+    display: flex;
+    flex-direction: row;
+    
 }
 
 input {
@@ -14,4 +21,14 @@ input {
 .rightIcons {
     display: flex;
     flex-direction: row;
+    
+}
+
+.rightIcons > p {
+    margin-left: 20px;
+}
+
+.banner {
+    width: 8%;
+    height: 8%;
 }
