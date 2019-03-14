@@ -12,11 +12,10 @@ class App extends Component {
       posts: dummyData
     };
   }
-
   render() {
     return (
       <div className="App">
-      <SearchBarContainer />
+        <SearchBarContainer />
         <PostContainer posts={this.state.posts} />
       </div>
     );

@@ -7,12 +7,15 @@ function SearchBarContainer (props) {
     return (
         <div className="searchBar">
             <div className="leftIcons">
-            <p><i class="fab fa-instagram"></i></p>
-            <p>|</p>
+                <p><i class="fab fa-instagram"></i></p>
+                <p>|</p>
             </div>
+
             <img className="banner" src={instagramBanner} />
 
-            <input type="text" value="Search" />
+            <form>
+                <input type="text" value="Search" />
+            </form>
             <div className="rightIcons">
                 <p><i class="far fa-compass"></i></p>
                 <p><i class="far fa-heart"></i></p>

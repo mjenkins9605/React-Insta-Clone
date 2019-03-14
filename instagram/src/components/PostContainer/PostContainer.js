@@ -1,19 +1,15 @@
 import React from "react";
 
-import Posts from "./Posts";
-import CommentSectionContainer from "./CommentSectionContainer";
+import Post from "./Posts";
 
-function PostContainer (props) {
-    return( 
-        <div>    
-            {props.dataProps.map(point => 
-                <div key ={point.timestamp}> 
-                    <img src={point.imageUrl} alt={point.timestamp}/>
-                    <CommentSectionContainer 
-                        comments={point.comments} />
-                </div>
-            )} 
-        </div>)
-}
-
-export default PostContainer;
+function PostsContainer (props) {
+    return (
+      <div className="posts-container">
+        {props.posts.map(
+            p => <Post key={p.imageUrl} post={p} />
+            )}
+      </div>
+    );
+  };
+  
+  export default PostsContainer;
