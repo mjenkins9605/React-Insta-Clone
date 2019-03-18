@@ -9,9 +9,20 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      posts: dummyData
+      posts: [],
+      search: "",
+      addNewComment: ""
     };
   }
+
+componentDidMount() {
+  this.setState({
+    posts: dummyData
+  });
+}
+
+
+
   render() {
     return (
       <div className="App">
