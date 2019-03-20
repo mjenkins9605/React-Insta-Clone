@@ -12,6 +12,26 @@ class CommentSectionContainer extends React.Component {
         comment: '',
       };
     }
+
+    inputChangeHandler = event => {
+        this.setState({ [event.target.name]: event.target.value });
+      };
+    
+      formSubmitHandler = event => {
+        event.preventDefault();
+        let newComment = {
+          username: "Anonymous",
+          text: this.state.comment
+        };
+    
+        console.log("state.comments are: ",this.state.comments);
+        let comments = this.state.comments.slice();
+        comments.push(newComment);
+        this.setState({
+          comments,
+          comment: ""
+        });
+      };
     
     render() {
       return (
@@ -22,7 +42,10 @@ class CommentSectionContainer extends React.Component {
             </div>
             <p>373 likes</p>
             {this.state.comments.map((comment, input) => <Comment key={input} comment={comment} />)}
-          <CommentInput/>
+          <CommentInput 
+            inputChangeHandler={this.inputChangeHandler} 
+            formSubmitHandler={this.formSubmitHandler}
+          />
         </div>
       );
     }
