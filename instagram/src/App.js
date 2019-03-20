@@ -27,7 +27,7 @@ componentDidMount() {
     return (
       <div className="App">
         <SearchBarContainer />
-        <PostContainer posts={this.state.posts} />
+        <PostContainer posts={this.state.posts}  />
       </div>
     );
   }

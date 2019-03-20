@@ -8,9 +8,11 @@ class CommentSectionContainer extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        comments: props.comments
+        comments: props.comments,
+        comment: '',
       };
     }
+    
     render() {
       return (
         <div className="comment-section">
@@ -19,8 +21,8 @@ class CommentSectionContainer extends React.Component {
                 <p className="commentImg"><i class="far fa-comment"></i></p>
             </div>
             <p>373 likes</p>
-          {this.state.comments.map((comment, input) => <Comment key={input} comment={comment} />)}
-          <CommentInput />
+            {this.state.comments.map((comment, input) => <Comment key={input} comment={comment} />)}
+          <CommentInput/>
         </div>
       );
     }
