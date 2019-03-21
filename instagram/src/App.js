@@ -11,7 +11,8 @@ class App extends Component {
     this.state = {
       posts: [],
       search: "",
-      addNewComment: ""
+      addNewComment: "",
+      filterPost: []
     };
   }
 
@@ -21,13 +22,31 @@ componentDidMount() {
   });
 }
 
+searchPostsHandler = event => {
+  const posts = this.state.posts.filter(p => {
+    if (p.username.includes(event.target.value)) {
+      return p;
+    }
+  });
+  this.setState({filterPost: posts});
+};
+
+
 
 
   render() {
     return (
       <div className="App">
-        <SearchBarContainer />
-        <PostContainer posts={this.state.posts}  />
+        <SearchBarContainer 
+          searchTerm={this.state.searchTerm}
+          searchPosts={this.searchPostsHandler}
+        />
+        <PostContainer 
+          posts={
+            this.state.filterPost.length > 0
+              ? this.state.filterPost
+              : this.state.posts
+          }/>
       </div>
     );
   }

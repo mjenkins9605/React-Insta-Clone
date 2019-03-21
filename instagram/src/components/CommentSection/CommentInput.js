@@ -1,27 +1,15 @@
 import React from "react";
 import "./CommentSection.css";
 
+const CommentInput = props => {
 
-class CommentInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      comments: props.comments,
-      comment: ""
-    };
-  }
-
-  
-
-  render() {
     return (
       <div>
-        <form onSubmit={this.props.formSubmitHandler}>
+        <form onSubmit={props.formSubmitHandler}>
           <input
             type="text"
             name="comment"
-            value={this.value}
-            onChange={this.props.inputChangeHandler}
+            onChange={props.inputChangeHandler}
             placeholder="Add a comment..."
           />
           <button type="submit">Post</button>
@@ -29,6 +17,6 @@ class CommentInput extends React.Component {
       </div>
     );
   }
-}
+
 
 export default CommentInput;
