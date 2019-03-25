@@ -1,16 +1,23 @@
 import React from "react";
 
 import Post from "./Posts";
-import "./PostContainer.css";
+// import "./PostContainer.css";
+import styled from 'styled-components';
 
 function PostsContainer (props) {
     return (
-      <div className="posts-container">
+      <PostsContainerDiv>
         {props.posts.map(
             p => <Post key={p.imageUrl} post={p} />
             )}
-      </div>
+      </PostsContainerDiv>
     );
   };
-  
+
+  const PostsContainerDiv = styled.div
+    `
+      width: 600px;
+      height: auto;
+      margin: 5px auto;
+    `
   export default PostsContainer;

@@ -4,24 +4,32 @@ import "./PostContainer.css";
 import PropTypes from 'prop-types';
 import PostHeader from "./PostHeader";
 import CommentSectionContainer from "../CommentSection/CommentSectionContainer";
+import styled from "styled-components";
 
 function Post (props) {
     return (
-      <div className="post-border">
+      <PostBorder>
         <PostHeader
           username={props.post.username}
           thumbnailUrl={props.post.thumbnailUrl}
         />
         <div className="post-img">
-          <img
-            alt="post thumbnail"
-            className="post-image"
-            src={props.post.imageUrl}
-          />
+          <PostImg img alt="post thumbnail" src={props.post.imageUrl} />
         </div>
         <CommentSectionContainer comments={props.post.comments} />
-      </div>
+      </PostBorder>
     );
   };
-  
+
+  const PostBorder = styled.div
+  `
+    border: 1px solid black;
+    margin-bottom: 20px;  
+  `
+  const PostImg = styled.img
+  `
+    width: 100%;
+    height: auto;  
+  `
+
   export default Post;

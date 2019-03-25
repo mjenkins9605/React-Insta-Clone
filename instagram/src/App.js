@@ -1,55 +1,26 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import dummyData from "./dummy-data";
-import SearchBarContainer from "./components/SearchBar/SearchBarContainer";
-import PostContainer from "./components/PostContainer/PostContainer";
+import PostsPage from "./components/PostContainer/PostsPage";
+import withAuthenticate from "./components/Authentication/withAuthenticate";
+import Login from "./components/Login/Login";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      posts: [],
-      search: "",
-      addNewComment: "",
-      filterPost: []
     };
   }
-
-componentDidMount() {
-  this.setState({
-    posts: dummyData
-  });
-}
-
-searchPostsHandler = event => {
-  const posts = this.state.posts.filter(p => {
-    if (p.username.includes(event.target.value)) {
-      return p;
-    }
-  });
-  this.setState({filterPost: posts});
-};
-
-
-
 
   render() {
     return (
       <div className="App">
-        <SearchBarContainer 
-          searchTerm={this.state.searchTerm}
-          searchPosts={this.searchPostsHandler}
-        />
-        <PostContainer 
-          posts={
-            this.state.filterPost.length > 0
-              ? this.state.filterPost
-              : this.state.posts
-          }/>
+        <ComponentAuth />
       </div>
     );
   }
 }
+
+const ComponentAuth = withAuthenticate(PostsPage)(Login);
 
 export default App;

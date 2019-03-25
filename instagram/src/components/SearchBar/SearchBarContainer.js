@@ -1,29 +1,29 @@
 import React from "react";
 
-import "./SearchBar.css";
+// import "./SearchBar.css";
 import instagramBanner from "./instagramBanner.jpg";
+import styled from 'styled-components';
 
 function SearchBarContainer(props) {
   return (
-    <div className="searchBar">
-      <div className="leftIcons">
+    <SearchBarCss>
+      <LeftIcons>
         <p className="camera">
           <i class="fab fa-instagram" />
         </p>
         <p>|</p>
-      </div>
+      </LeftIcons>
 
-      <img className="banner" src={instagramBanner} />
+      <Banner img src={instagramBanner} />
 
-      <form>
-        <input 
+      
+        <SearchForm input 
             type="text" 
             placeholder="Search" 
             onKeyDown={props.searchPosts} 
         />
-      </form>
-
-      <div className="rightIcons">
+      
+      <RightIcons>
         <p>
           <i class="far fa-compass" />
         </p>
@@ -33,9 +33,56 @@ function SearchBarContainer(props) {
         <p>
           <i class="far fa-user" />
         </p>
-      </div>
-    </div>
+      </RightIcons>
+    </SearchBarCss>
   );
 }
+
+const SearchBarCss = styled.div
+  `
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 40px;  
+  `
+
+const LeftIcons = styled.div
+  `
+    display: flex;
+    flex-direction: row;  
+    margin-top: 20px
+    p {
+      margin-right: 30px;
+    }
+  `
+
+const RightIcons = styled.div
+  `
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px
+      p {
+        margin-left: 30px;
+      }
+  `
+const Banner = styled.img
+  `
+    width: 15%;
+    height: 15%;
+    margin-top: 35px;
+    padding-right: 30px;
+  `
+
+const SearchForm = styled.input
+  `
+    width: 250px;
+    height: 30px;
+    font-size: 16px; 
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 5px;
+  `
+
+
 
 export default SearchBarContainer;
